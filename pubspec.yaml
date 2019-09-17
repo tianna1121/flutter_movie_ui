@@ -57,9 +57,13 @@ flutter:
         - asset: assets/fonts/SF-Pro-Display-Bold.ttf
     #       - asset: fonts/Schyler-Italic.ttf
     #         style: italic
-    - family: SF-Pro-Display-Regular
+    - family: CustomFont
       fonts:
-        - asset: assets/fonts/SF-Pro-Display-Regular.ttf
+        - asset: assets/fonts/CustomFont.ttf
+
+    - family: back_icon
+      fonts:
+        - asset: assets/fonts/back_icon.ttf
   #       - asset: fonts/TrajanPro_Bold.ttf
   #         weight: 700
   #

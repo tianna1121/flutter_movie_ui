@@ -24,6 +24,28 @@ class _HomeState extends State<Home> {
           ],
         ),
       ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: 0,
+        type: BottomNavigationBarType.fixed,
+        items: [
+          BottomNavigationBarItem(
+            title: Text('Home', style: TextStyle(color: Color(0xFFE52020))),
+            icon: Icon(Icons.home, color: Color(0xFFE52020)),
+          ),
+          BottomNavigationBarItem(
+            title: Text('Search'),
+            icon: Icon(Icons.search, color: Color(0xFFE52020)),
+          ),
+          BottomNavigationBarItem(
+            title: Text('Bookmark'),
+            icon: Icon(Icons.bookmark, color: Color(0xFFE52020)),
+          ),
+          BottomNavigationBarItem(
+            title: Text('Profile'),
+            icon: Icon(Icons.person_outline, color: Color(0xFFE52020)),
+          ),
+        ],
+      ),
     );
   }
 }
@@ -273,7 +295,6 @@ class Mclipper extends CustomClipper<Path> {
 
   @override
   bool shouldReclip(CustomClipper<Path> oldClipper) {
-    // TODO: implement shouldReclip
-    return null;
+    return true;
   }
 }
