@@ -32,17 +32,53 @@ class HomeScreenTopPart extends StatelessWidget {
       height: 420.0,
       child: Stack(
         children: <Widget>[
-          Container(
-            height: 370.0,
-            decoration: BoxDecoration(color: Colors.white, boxShadow: [
-              BoxShadow(
-                  color: Colors.black12,
-                  offset: Offset(0.0, 10.0),
-                  blurRadius: 10.0)
-            ]),
+          ClipPath(
+            clipper: Mclipper(),
+            child: Container(
+              height: 370.0,
+              decoration: BoxDecoration(color: Colors.white, boxShadow: [
+                BoxShadow(
+                    color: Colors.black12,
+                    offset: Offset(0.0, 10.0),
+                    blurRadius: 10.0)
+              ]),
+              child: Stack(
+                children: <Widget>[
+                  Image.asset(
+                    'assets/images/banner.png',
+                    fit: BoxFit.cover,
+                    width: double.infinity,
+                  ),
+                ],
+              ),
+            ),
           ),
         ],
       ),
     );
+  }
+}
+
+class Mclipper extends CustomClipper<Path> {
+  @override
+  Path getClip(Size size) {
+    var path = new Path();
+    path.lineTo(0.0, size.height - 100.0);
+    var controlPoint = Offset(35.0, size.height);
+    var oldPoint = Offset(size.width / 2, size.height);
+
+    path.quadraticBezierTo(
+        controlPoint.dx, controlPoint.dy, oldPoint.dx, oldPoint.dy);
+
+    path.lineTo(size.width, size.height);
+    path.lineTo(size.width, 0.0);
+
+    return path;
+  }
+
+  @override
+  bool shouldReclip(CustomClipper<Path> oldClipper) {
+    // TODO: implement shouldReclip
+    return null;
   }
 }
